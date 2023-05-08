@@ -17,6 +17,7 @@
 #include "inc/pqueue.h"
 #include "nand/nand.h"
 #include "timing-model/timing.h"
+#include "timing-model/zns-timing.h"
 
 #define NVME_ID_NS_LBADS(ns)                                                  \
     ((ns)->id_ns.lbaf[NVME_ID_NS_FLBAS_INDEX((ns)->id_ns.flbas)].lbads)

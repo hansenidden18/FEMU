@@ -1,7 +1,6 @@
-#ifndef __FEMU_TIMING_MODEL
-#define __FEMU_TIMING_MODEL
+#ifndef __FEMU_ZNS_TIMING_MODEL
+#define __FEMU_ZNS_TIMING_MODEL
 
-/*
 #define ZNS_BLK_BITS    (32)
 #define ZNS_FC_BITS     (8)
 #define ZNS_CH_BITS     (8)
@@ -11,14 +10,8 @@ enum {
     ZNS_WRITE = 1,
     ZNS_ERASE = 2,
 };
-*/
-typedef struct FemuCtrl FemuCtrl;
 
-int64_t advance_channel_timestamp(FemuCtrl *n, int ch, uint64_t now, int opcode);
-int64_t advance_chip_timestamp(FemuCtrl *n, int lunid, uint64_t now, int opcode,
-                               uint8_t page_type);
-void set_latency(FemuCtrl *n);
-/*
+typedef struct FemuCtrl FemuCtrl;
 typedef struct NvmeNamespace NvmeNamespace;
 
 struct zns_ppa {
@@ -75,5 +68,5 @@ void zns_check_addr(int a, int max);
 void advance_read_pointer(FemuCtrl *n);
 struct zns_ppa lpn_to_ppa(FemuCtrl *n, NvmeNamespace *ns, uint64_t lpn);
 uint64_t zns_advance_status(FemuCtrl *n, struct zns_nand_cmd *ncmd, struct zns_ppa *ppa);
-*/
+
 #endif
